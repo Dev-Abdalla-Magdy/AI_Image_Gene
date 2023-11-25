@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+input,
+button {
+  border: none;
+  outline: none;
+}
+.app {
+  min-height: 100vh;
+  height: 100%;
+  width: 100%;
+  background: #222;
+  color: #fff;
+}
+.container {
+  height: 100%;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.head {
+  text-shadow: 2px 2px 5px #ddd;
+  margin: 25px auto;
+}
+.head .title {
+  font-size: 40px;
+  text-align: center;
+}
+.body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 75px;
+}
+@media (min-width: 768px) {
+  .body {
+    width: 600px;
+  }
+}
+.results {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-rows: repeat(2, 300px);
+  gap: 20px;
+  width: 100%;
+}
+.results .img-box {
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 5px solid #444;
+  position: relative;
+  overflow: hidden;
+}
+.results .img-box:hover img {
+  opacity: 0.75;
+}
+.results img {
+  max-width: 250px;
+  transition: 0.5s;
+  outline: 5px solid #555;
+  border-radius: 5px;
+}
+.prompt {
+  position: relative;
+  margin-bottom: 25px;
+  padding: 0 10px;
+}
+.gene-input {
+  width: 100%;
+  padding: 20px;
+  border-radius: 10px;
+  background: #555;
+  font-size: 18px;
+  color: #fff;
+  box-shadow: 0px 0px 10px #ddd;
+}
+.gene-input::placeholder {
+  transition: 0.5s;
+}
+.gene-input:focus::placeholder {
+  opacity: 0;
+}
+.gene-btn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 15px;
+  background: #222;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 10px;
+  margin-right: 5px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.gene-btn:hover {
+  background: #333;
+}
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: #00000045;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 18px;
+  line-height: 2;
+}
+.footer span {
+  color: rgb(255, 155, 0);
+  text-shadow: 2px 2px 5px rgb(255, 155, 0);
+  font-weight: bold;
+  cursor: pointer;
+}
+@media (max-width: 767px) {
+  .container {
+    margin: 0 10px;
+  }
+  .body {
+    margin-bottom: 80px;
+  }
+  .results {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 250px);
+    gap: 20px;
+    margin: 40px 0;
+  }
+  .results img {
+    max-width: 350px;
+  }
+  .footer {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+}
+@keyframes loading {
+  0% {
+    background: #ffffff26;
+  }
+  50% {
+    background: #dddddd60;
+  }
+  100% {
+    background: #ffffff26;
+  }
+}
